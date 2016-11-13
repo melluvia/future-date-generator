@@ -10,49 +10,48 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	@IBOutlet var monthTextField: UITextField!
-	@IBOutlet var dayTextField: UITextField!
-	@IBOutlet var yearTextField: UITextField!
-	@IBOutlet var addSecondsTextField: UITextField!
+	@IBOutlet var month: UITextField!
+	@IBOutlet var day: UITextField!
+	@IBOutlet var year: UITextField!
+	@IBOutlet var seconds: UITextField!
 	@IBOutlet var dateLabel: UILabel!
-	
-	
-	@IBAction func calculateDateButton(_ sender: Any) {
+
+	@IBAction func calculate(_ sender: Any) {
 		
 		// Check if values exist
 		
-		if monthTextField.text != "" && dayTextField.text != "" && yearTextField.text != "" {
+		if month.text != "" && day.text != "" && year.text != "" {
 			
 			//Check if value entered for Month is valid
 			
-			switch Int(monthTextField.text!)! {
+			switch Int(month.text!)! {
 				
 				case 1...12:
 				
 				//Check if value entered for Day is valid
 				
-					switch Int(dayTextField.text!)! {
+					switch Int(day.text!)! {
 					
 				case 1...31:
 					
 						//Check if value entered for Year is valid
 						
-					switch Int(yearTextField.text!)! {
+					switch Int(year.text!)! {
 						
 				case 1000..<9999:
 						
 					// Create Date string variable
+	
+					let dateString: String = "\(year.text!) - \(month.text!) - \(day.text!) 12:00:00 AM"
 							
-					let dateString: String = "\(yearTextField.text!) - \(monthTextField.text!) - \(dayTextField.text!) 12:00:00 AM"
-							
-					let formatter:DateFormatter = DateFormatter()
+					let formatter: DateFormatter = DateFormatter()
 					formatter.amSymbol = "AM"
 					formatter.pmSymbol = "PM"
 					formatter.dateFormat = "yyyy-MM-dd hh:mm:ss a"
 						
 					// Add seconds to Date
 							
-					if addSecondsTextField.text == "" {
+					if seconds.text == "" {
 							
 					print("Seconds Empty")
 					dateLabel.text = formatter.string(from: formatter.date(from: dateString)!)
@@ -62,9 +61,9 @@ class ViewController: UIViewController {
 							
 							print("Seconds not Empty")
 							// convert seconds to minutes
-							let secToAdd: Double = Double(addSecondsTextField.text!)! * 60
+							let AddSeconds: Double = Double(seconds.text!)! * 60
 							// Add specified time amount to given date
-							let newDate:Date = Date.init(timeInterval: secToAdd, since: formatter.date(from: dateString)!)
+							let newDate: Date = Date.init(timeInterval: AddSeconds, since: formatter.date(from: dateString)!)
 							dateLabel.text = formatter.string(from: newDate)
 						}
 						
@@ -105,10 +104,10 @@ class ViewController: UIViewController {
 	
 	func resetDate() -> (Void) {
 		dateLabel.text = ""
-		monthTextField.text = ""
-		dayTextField.text = ""
-		yearTextField.text = ""
-		addSecondsTextField.text = ""
+		month.text = ""
+		day.text = ""
+		year.text = ""
+		seconds.text = ""
 	}
 	
 }
