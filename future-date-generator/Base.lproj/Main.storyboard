@@ -34,7 +34,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="u8F-kY-qpG">
                                 <rect key="frame" x="107" y="105" width="160" height="159"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Month" textAlignment="center" minimumFontSize="17" background="input" translatesAutoresizingMaskIntoConstraints="NO" id="vb3-ky-zeb" userLabel="month">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Month" textAlignment="center" minimumFontSize="17" background="input" translatesAutoresizingMaskIntoConstraints="NO" id="vb3-ky-zeb" userLabel="month">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Hrg-AI-siQ"/>
@@ -94,7 +94,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="wfR-UZ-XGh">
                                 <rect key="frame" x="0.0" y="403" width="375" height="264"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkO-uJ-JEB">
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkO-uJ-JEB" userLabel="reset">
                                 <rect key="frame" x="103.5" y="322" width="160" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="M5q-w0-j3D"/>
@@ -106,6 +106,9 @@
                                 <state key="normal" title="Reset" backgroundImage="reset">
                                     <color key="titleColor" red="0.24527102708816528" green="0.69626659154891968" blue="0.97390002012252808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmK-BK-wV4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEa-ge-p7l" userLabel="dateLabel">
                                 <rect key="frame" x="122" y="543" width="119" height="38"/>
@@ -148,11 +151,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="date" destination="CEa-ge-p7l" id="JFj-SM-7Dv"/>
-                        <outlet property="day" destination="e0d-Z8-Sy3" id="TQB-u4-ke4"/>
-                        <outlet property="month" destination="vb3-ky-zeb" id="w44-nE-aFp"/>
-                        <outlet property="seconds" destination="Fpw-aT-ImG" id="9T8-Xa-cGh"/>
-                        <outlet property="year" destination="o82-ZB-8RQ" id="S7m-rv-stt"/>
+                        <outlet property="dateLabel" destination="CEa-ge-p7l" id="xQQ-kR-wIu"/>
+                        <outlet property="day" destination="e0d-Z8-Sy3" id="pBi-mL-vLt"/>
+                        <outlet property="month" destination="vb3-ky-zeb" id="TVo-dA-BJn"/>
+                        <outlet property="seconds" destination="Fpw-aT-ImG" id="J6Q-vh-mRh"/>
+                        <outlet property="year" destination="o82-ZB-8RQ" id="XrB-DH-ifa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
